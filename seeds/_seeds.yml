@@ -1,0 +1,16 @@
+version: 2
+
+seeds:
+  - name: seed_patients_adresses_cleaned
+    description: "Adresses patients nettoyees et associees au referentiel geographique."
+    columns:
+      - name: patient_id
+        tests:
+          - not_null
+          - unique
+      - name: match_score
+        tests:
+          - not_null
+      - name: match_type
+        tests:
+          - not_null

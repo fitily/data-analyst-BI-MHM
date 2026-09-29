@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  dbt:
+    build: .
+    command: tail -f /dev/null
+    volumes:
+      - .:/usr/app
+      - ./profiles.yml:/root/.dbt/profiles.yml
+    working_dir: /usr/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase
+    ports:
+      - "3000:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      MB_BD_TYPE: h2

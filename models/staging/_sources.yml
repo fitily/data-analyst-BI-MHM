@@ -1,0 +1,6 @@
+version: 2
+
+sources:
+  - name: prod_mhm_ps
+    tables:
+      - name: patients

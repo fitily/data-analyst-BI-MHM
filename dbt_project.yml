@@ -1,0 +1,23 @@
+name: 'bi_mhm_project'
+version: '1.0.0'
+config-version: 2
+
+profile: 'bi_mhm_project'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  bi_mhm_project:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  bi_mhm_project:
+    +delimiter: ";"
+    +quote_columns: false
