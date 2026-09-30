@@ -29,7 +29,6 @@ profiles.yml
 .user.yml
 # ============================================================
 # Real / sensitive data
-# NEVER commit real MHM patient data
 # ============================================================
 *.csv
 *.xlsx
